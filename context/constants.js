@@ -5,12 +5,12 @@ import Web3Modal from "web3modal";
 import tokenICO from "./TokenICO.json";
 import erc20 from "./ERC20.json";
 
-export const TOKEN_ADDRESS = "0x0dE39f9d8f0d142875B94245FA4c289970015694";
+export const TOKEN_ADDRESS = "0xDcb726cd5F41158DABdA7362b81db35115d7Da83";
 export const ERC20_ABI = erc20.abi;
 
-export const OWNER_ADDRESS = "0xb309098bcB51E5C687a16FA41bD6055f47c9eBb0";
+export const OWNER_ADDRESS = "0xAe244B660840e703C49D49cA9fA9e80218724a1f";
 
-export const CONTRACT_ADDRESS = "0x869E22285018a0571C236606ABc5928969C657DF";
+export const CONTRACT_ADDRESS = "0x1D281307A5AcB32a68E7F054628037409f6C969e";
 export const CONTRACT_ABI = tokenICO.abi;
 
 const networks = {

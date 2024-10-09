@@ -2,8 +2,8 @@ import React from "react";
 
 const Loader = () => {
   return (
-    <div className="custom-loader-wrapper">
-      <div className="custom-loader"></div>
+    <div class="custom-loader-wrapper">
+      <div class="custom-loader"></div>
     </div>
   );
 };

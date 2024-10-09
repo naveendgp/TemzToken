@@ -9,7 +9,7 @@ const About = () => {
             <div className="about__img pos-rel wow fadeInLeft">
               <img src="assets/img/about/about_img.png" alt="" />
               <div className="about__shape">
-                <img src="assets/img/shape/about_shape" alt="" />
+                <img src="assets/img/shape/about_shape.png" alt="" />
               </div>
             </div>
           </div>
@@ -19,18 +19,18 @@ const About = () => {
               data-wow-delay="100ms"
             >
               <div className="sec-title mb-35">
-                <h5 className="sec-title__subtitle">WHAT IS ICO CRYPTO</h5>
+                <h5 className="sec-title__subtitle">ICO CRYPTO</h5>
                 <h2 className="sec-title__title mb-25">
-                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Invest in our popular ICO and become part of the future of
+                  Green Revolution.
                 </h2>
                 <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Officia quae facere corrupti doloremque eos minima optio
-                  corporis ut, ipsam totam facilis esse? Quae nesciunt
-                  necessitatibus perferendis neque, facilis impedit voluptatem?
+                  In an ICO, a project or startup issues a new digital token,
+                  typically based on a blockchain platform such as Binance.
+                  These tokens serve a specific purpose within the project's
+                  ecosystem, such as accessing services
                 </p>
               </div>
-
               <ul className="about__list ul_li">
                 <li>
                   <img src="assets/img/icon/a_arrow.svg" alt="" />
@@ -61,9 +61,8 @@ const About = () => {
           </div>
         </div>
       </div>
-
       <div className="about__sec-shape">
-        <img src="assets/img/shape/s_shape_2.png" alt="" />
+        <img src="assets/img/shape/s_shape2.png" alt="" />
       </div>
     </section>
   );

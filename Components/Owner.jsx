@@ -1,4 +1,10 @@
 import React from "react";
+import {
+  TiSocialFacebook,
+  TiSocialTwitter,
+  TiSocialLinkedin,
+  TiSocialInstagram,
+} from "react-icons/ti";
 import { FaPlus } from "react-icons/fa6";
 
 const Owner = ({
@@ -8,29 +14,27 @@ const Owner = ({
   account,
   setTransferModel,
   setTransferCurrency,
-  setOpenDonate,
-  TOKEN_WITHDRAW,
   setOpenUpdatePrice,
   setOpenUpdateAddress,
+  setOpenDonate,
+  TOKEN_WITHDRAW,
 }) => {
   return (
-    <section className="team pos-rel ">
-      <div className="container">
-        <div className="new-owner team__wrap ul_li">
-          <div className="team__item">
-            <div className="avatar">
+    <section id="team" class="team pos-rel pos-rel">
+      <div class="container">
+        <div class="new-owner  team__wrap ul_li">
+          <div class="team__item">
+            <div class="avatar">
               <img src="assets/img/shape/c_shape1.png" alt="" />
             </div>
-
-            <div className="team__info text-center mb-20">
+            <div class="team__info text-center mb-20">
               <h3>TOKEN TRANSFER</h3>
-              <span>Any ERC 20</span>
+              <span>Any ERC20</span>
             </div>
-
-            <div className="team__social ul_li_center">
+            <div class="team__social ul_li_center">
               <span
                 onClick={() => (setOwnerModel(false), setTransferModel(true))}
-                className="h-icon"
+                class="h-icon"
                 style={{
                   cursor: "pointer",
                 }}
@@ -39,24 +43,22 @@ const Owner = ({
               </span>
             </div>
           </div>
-          <div className="team__item">
-            <div className="avatar">
+          <div class="team__item">
+            <div class="avatar">
               <img src="assets/img/token/t_info_img.png" alt="" />
             </div>
-
-            <div className="team__info text-center mb-20">
+            <div class="team__info text-center mb-20">
               <h3>TRANSFER FUND</h3>
               <span>
                 {detail?.maticBal.slice(0, 6)} {currency}
               </span>
             </div>
-
-            <div className="team__social ul_li_center">
+            <div class="team__social ul_li_center">
               <span
                 onClick={() => (
                   setOwnerModel(false), setTransferCurrency(true)
                 )}
-                className="h-icon"
+                class="h-icon"
                 style={{
                   cursor: "pointer",
                 }}
@@ -65,20 +67,18 @@ const Owner = ({
               </span>
             </div>
           </div>
-          <div className="team__item">
-            <div className="avatar">
+          <div class="team__item">
+            <div class="avatar">
               <img src="assets/img/shape/c_shape2.png" alt="" />
             </div>
-
-            <div className="team__info text-center mb-20">
+            <div class="team__info text-center mb-20">
               <h3>DONATE FUND</h3>
               <span>If you can</span>
             </div>
-
-            <div className="team__social ul_li_center">
+            <div class="team__social ul_li_center">
               <span
                 onClick={() => (setOwnerModel(false), setOpenDonate(true))}
-                className="h-icon"
+                class="h-icon"
                 style={{
                   cursor: "pointer",
                 }}
@@ -90,20 +90,18 @@ const Owner = ({
 
           {account == detail?.owner && (
             <>
-              <div className="team__item">
-                <div className="avatar">
+              <div class="team__item">
+                <div class="avatar">
                   <img src="assets/img/token/t_info_img.png" alt="" />
                 </div>
-
-                <div className="team__info text-center mb-20">
-                  <h3>WITHDRAW</h3>
+                <div class="team__info text-center mb-20">
+                  <h3>WITHDRAW </h3>
                   <span>ICO TOKEN, Only Owner</span>
                 </div>
-
-                <div className="team__social ul_li_center">
+                <div class="team__social ul_li_center">
                   <span
                     onClick={() => TOKEN_WITHDRAW()}
-                    className="h-icon"
+                    class="h-icon"
                     style={{
                       cursor: "pointer",
                     }}
@@ -112,23 +110,20 @@ const Owner = ({
                   </span>
                 </div>
               </div>
-
-              <div className="team__item">
-                <div className="avatar">
+              <div class="team__item">
+                <div class="avatar">
                   <img src="assets/img/token/t_info_img.png" alt="" />
                 </div>
-
-                <div className="team__info text-center mb-20">
-                  <h3>UPDATE TOKEN</h3>
+                <div class="team__info text-center mb-20">
+                  <h3>UPDATE TOKEN </h3>
                   <span>ICO TOKEN, Only Owner</span>
                 </div>
-
-                <div className="team__social ul_li_center">
+                <div class="team__social ul_li_center">
                   <span
                     onClick={() => (
                       setOwnerModel(false), setOpenUpdateAddress(true)
                     )}
-                    className="h-icon"
+                    class="h-icon"
                     style={{
                       cursor: "pointer",
                     }}
@@ -137,23 +132,20 @@ const Owner = ({
                   </span>
                 </div>
               </div>
-
-              <div className="team__item">
-                <div className="avatar">
+              <div class="team__item">
+                <div class="avatar">
                   <img src="assets/img/token/t_info_img.png" alt="" />
                 </div>
-
-                <div className="team__info text-center mb-20">
-                  <h3>UPDATE TOKEN PRICE</h3>
-                  <span>ICO TOKEN, Only Owner</span>
+                <div class="team__info text-center mb-20">
+                  <h3>TOKEN_PRICE </h3>
+                  <span>UPDATE TOKEN PRICE, Only Owner</span>
                 </div>
-
-                <div className="team__social ul_li_center">
+                <div class="team__social ul_li_center">
                   <span
                     onClick={() => (
                       setOwnerModel(false), setOpenUpdatePrice(true)
                     )}
-                    className="h-icon"
+                    class="h-icon"
                     style={{
                       cursor: "pointer",
                     }}
@@ -166,13 +158,11 @@ const Owner = ({
           )}
         </div>
       </div>
-
-      <div className="team__shape">
-        <div className="shape shape--1">
+      <div class="team__shape">
+        <div class="shape shape--1">
           <img src="assets/img/shape/t_shape1.png" alt="" />
         </div>
-
-        <div className="shape shape--2">
+        <div class="shape shape--2">
           <img src="assets/img/shape/t_shape2.png" alt="" />
         </div>
       </div>

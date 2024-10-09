@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { ConnectButton } from "@rainbow-me/rainbowkit";
 
 const Header = ({
+  account,
+  CONNECT_WALLET,
   setAccount,
+  setLoader,
   setOwnerModel,
   shortenAddress,
   detail,
@@ -29,21 +31,23 @@ const Header = ({
   }, []);
 
   const handleAccountsChanged = (accounts) => {
+    console.log("Accounts changed:", accounts[0]);
     setAccount(accounts[0]);
   };
 
-  const connectMetamask = async () => {
+  const connectMetaMask = async () => {
     if (typeof window.ethereum !== "undefined") {
       try {
         const accounts = await window.ethereum.request({
           method: "eth_requestAccounts",
         });
         setAccount(accounts[0]);
+        console.log("Connected accounts:", accounts[0]);
       } catch (error) {
-        console.log(error);
+        console.error("Error connecting to MetaMask:", error);
       }
     } else {
-      console.log("MetaMask is not installed");
+      console.error("MetaMask is not installed.");
     }
   };
 
@@ -55,20 +59,24 @@ const Header = ({
             <div className="header__left ul_li">
               <div className="header__logo">
                 <a href="/">
-                  <img src="assets/img/logo/logo.svg" alt="Logo" />
+                  <img src="assets/img/logo/logo-2.svg" alt="" />
                 </a>
               </div>
             </div>
-
             <div className="main-menu__wrap ul_li navbar navbar-expand-xl">
               <nav className="main-menu collapse navbar-collapse">
                 <ul>
-                  <li className="active has-mega-menu">
+                  <li className=" active has-mega-menu">
                     <a href="/">Home</a>
                   </li>
                   <li>
                     <a className="scrollspy-btn" href="#about">
-                      About
+                      about
+                    </a>
+                  </li>
+                  <li>
+                    <a className="scrollspy-btn" href="#roadmap">
+                      Roadmap
                     </a>
                   </li>
                   <li>
@@ -78,7 +86,7 @@ const Header = ({
                   </li>
                   <li>
                     <a className="scrollspy-btn" href="#faq">
-                      FAQ
+                      Faq
                     </a>
                   </li>
                   <li>
@@ -89,8 +97,12 @@ const Header = ({
                   <li>
                     <a
                       className="scrollspy-btn"
-                      style={{ cursor: "pointer" }}
-                      onClick={() => setOwnerModel(!ownerModel)}
+                      style={{
+                        cursor: "pointer",
+                      }}
+                      onClick={() =>
+                        ownerModel ? setOwnerModel(false) : setOwnerModel(true)
+                      }
                     >
                       Tools
                     </a>
@@ -98,35 +110,12 @@ const Header = ({
                 </ul>
               </nav>
             </div>
-
-            {/* <div className="header__account">
-              {isConnected ? (
-                <div>
-                  {ensAvatar && <img alt="ENS Avatar" src={ensAvatar} />}
-                  {address && (
-                    <div>{ensName ? `${ensName} (${address})` : address}</div>
-                  )}
-                  <button onClick={() => disconnect()}>Disconnect</button>
-                </div>
-              ) : (
-                <>
-                  {connectors.map((connector) => (
-                    <div key={connector.id} className="header__account">
-                      <a
-                        onClick={() => connect({ connector })}
-                        style={{ cursor: "pointer" }}
-                      >
-                        {connector.name}
-                      </a>
-                    </div>
-                  ))}
-                </>
-              )}
-            </div> */}
-
             <div className="header__action ul_li">
               <div className="d-xl-none">
-                <a className="header__bar hamburger_menu">
+                <a
+                  className="header__bar hamburger_menu"
+                  href="javascript:void(0);"
+                >
                   <div className="header__bar-icon">
                     <span />
                     <span />
@@ -135,20 +124,22 @@ const Header = ({
                   </div>
                 </a>
               </div>
-              {/* {detail && (
+              {account ? (
                 <div className="header__account">
                   <a
                     onClick={() =>
                       navigator.clipboard.writeText(detail?.address)
                     }
                   >
-                    {shortenAddress(detail?.address)}:{" "}
-                    {detail?.maticBal.slice(0, 6)}
-                    {currency}
+                    {shortenAddress(detail?.address)} :{" "}
+                    {detail?.maticBal.slice(0, 6)} {currency}
                   </a>
                 </div>
-              )} */}
-              <ConnectButton />
+              ) : (
+                <div className="header__account">
+                  <a onClick={() => connectMetaMask()}>Connect Wallet</a>
+                </div>
+              )}
             </div>
           </div>
         </div>

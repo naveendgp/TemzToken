@@ -2,26 +2,25 @@ import React from "react";
 
 const Token = () => {
   return (
-    <section className="token pt-125">
-      <div className="container">
-        <div className="row align-items-center mt-none-30">
-          <div className="col-lg-5 mt-30">
-            <div className="token__content wow fadeInLeft">
-              <div className="sec-title mb-20">
-                <h5 className="sec-title__subtitle">Tokenomics</h5>
-                <h2 className="sec-title__title">
+    <section class="token pt-125">
+      <div class="container">
+        <div class="row align-items-center mt-none-30">
+          <div class="col-lg-5 mt-30">
+            <div class="token__content wow fadeInLeft">
+              <div class="sec-title mb-20">
+                <h5 class="sec-title__subtitle">Tokenomics</h5>
+                <h2 class="sec-title__title">
                   Token allocation & funds distribution
                 </h2>
               </div>
-
-              <ul className="nav nav-tabs token__tab" id="myTab" role="tablist">
-                <li className="nav-item" role="presentation">
+              <ul class="nav nav-tabs token__tab" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
                   <button
-                    className="nav-link active"
+                    class="nav-link active"
                     id="home-tab"
                     data-bs-toggle="tab"
-                    type="button"
                     data-bs-target="#home"
+                    type="button"
                     role="tab"
                     aria-controls="home"
                     aria-selected="true"
@@ -29,64 +28,59 @@ const Token = () => {
                     Funding Allocation
                   </button>
                 </li>
-
-                <li className="nav-item" role="presentation">
+                <li class="nav-item" role="presentation">
                   <button
-                    className="nav-link "
+                    class="nav-link"
                     id="profile-tab"
                     data-bs-toggle="tab"
-                    type="button"
                     data-bs-target="#profile"
+                    type="button"
                     role="tab"
                     aria-controls="profile"
-                    aria-selected="true"
+                    aria-selected="false"
                   >
                     Token Allocation
                   </button>
                 </li>
               </ul>
-
-              <div className="token__info mt-40">
-                <h2 className="">1 CNL = 0.00013 BTC</h2>
+              <div class="token__info mt-40">
+                <h2>1 TEMZ = 0.0052 BNB</h2>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Veritatis voluptates nihil incidunt amet fugiat molestiae
-                  similique et quibusdam sint, architecto natus iure eius quia,
-                  laborum cumque suscipit tempore dolore aspernatur!
+                  A portion of the total token supply is often allocated as
+                  reserved <br />
+                  tokens. These tokens are set aside for the development
                 </p>
-
-                <div className="token-btn mt-40">
-                  <a href="#" className="thm-btn">
-                    Buy now
+                <div class="token-btn mt-40">
+                  <a class="thm-btn" href="#!">
+                    buy now
                   </a>
                 </div>
               </div>
             </div>
           </div>
-
-          <div className="col-lg-7 mt-30">
+          <div class="col-lg-7 mt-30">
             <div
-              className="tab-content wow fadeInRight"
+              class="tab-content wow fadeInRight"
               data-wow-delay="100ms"
               id="myTabContent"
             >
               <div
-                className="tab-pane fade show active"
+                class="tab-pane fade show active"
                 id="home"
                 role="tabpanel"
                 aria-labelledby="home-tab"
               >
-                <div className="token__img">
-                  <img src="assets/img/token/token_chart.png" alt="" />
+                <div class="token__img">
+                  <img src="assets/img/token/token-distribution.png" alt="" />
                 </div>
               </div>
               <div
-                className="tab-pane fade "
+                class="tab-pane fade"
                 id="profile"
                 role="tabpanel"
                 aria-labelledby="profile-tab"
               >
-                <div className="token__img">
+                <div class="token__img">
                   <img src="assets/img/token/token_chart2.png" alt="" />
                 </div>
               </div>

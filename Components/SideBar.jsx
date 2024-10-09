@@ -1,69 +1,52 @@
 import React from "react";
 
-const SideBar = ({ setOwnerModel, ownerModel }) => {
+const SideBar = () => {
   return (
     <aside className="slide-bar">
       <div className="close-mobile-menu">
-        <a href="/" className="tx-close"></a>
+        <a className="tx-close" href="javascript:void(0);" />
       </div>
-
+      {/* side-mobile-menu start */}
       <nav className="side-mobile-menu">
-        <a href="/" className="header__logo mb-30">
-          <img src="assets/img/logo/logo.svg" alt="" srcset="" />
+        <a className="header__logo mb-30" href="#!">
+          <img src="assets/img/logo/logo.svg" alt="" />
         </a>
         <div className="header-mobile-search">
-          <form action="#" role="search">
+          <form role="search" method="get" action="#">
             <input type="text" placeholder="Search Keywords" />
             <button type="submit">
               <i className="ti-search" />
             </button>
           </form>
         </div>
-
         <ul id="mobile-menu-active">
-          <li>
+          <li className="">
             <a href="/">Home</a>
           </li>
           <li>
-            <a href="#about" className="scrollspy-btn">
-              About
+            <a className="scrollspy-btn" href="#about">
+              about
             </a>
           </li>
           <li>
-            <a href="#roadmap" className="scrollspy-btn">
-              RoadMap
+            <a className="scrollspy-btn" href="#roadmap">
+              Roadmap
             </a>
           </li>
           <li>
-            <a href="#team" className="scrollspy-btn">
+            <a className="scrollspy-btn" href="#team">
               Team
             </a>
           </li>
-          <li>
-            <a href="#!" className="">
-              Blog
-            </a>
+          <li className="">
+            <a href="#!">Blog</a>
           </li>
           <li>
-            <a href="#!" className="">
-              Get In touch
-            </a>
-          </li>
-          <li>
-            <a
-              className="scrollspy-btn"
-              style={{
-                cursor: "pointer",
-              }}
-              onClick={() =>
-                ownerModel ? setOwnerModel(false) : setOwnerModel(true)
-              }
-            >
-              Tools
-            </a>
+            <a href="contact.html">Get in touch</a>
           </li>
         </ul>
       </nav>
+      {/* side-mobile-menu end */}
     </aside>
   );
 };

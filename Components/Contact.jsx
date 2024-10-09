@@ -1,56 +1,51 @@
 import React from "react";
 import toast from "react-hot-toast";
-import { useForm } from "@formspree/react";
+import { useForm, ValidationError } from "@formspree/react";
 
-const Contact = () => {
+const contact = () => {
   const notifySuccess = (msg) => toast.success(msg, { duration: 2000 });
   const notifyError = (msg) => toast.error(msg, { duration: 2000 });
-
-  const [state, handleSubmit] = useForm("xpwanoep");
-
+  //FORM
+  const [state, handleSubmit] = useForm("mzbnzpqr");
   if (state.succeeded) {
-    notifySuccess("successfully submitted");
+    notifySuccess("Successfully submitted");
     window.location.reload();
+    return;
   }
-
   return (
-    <section id="contact" className="ico-contact pos-rel">
-      <div className="container">
-        <div className="ico-contact__wrap">
-          <h2 className="title">Contact with coindox</h2>
-
+    <section id="contact" class="ico-contact pos-rel">
+      <div class="container">
+        <div class="ico-contact__wrap">
+          <h2 class="title">Contact with temz</h2>
           <form onSubmit={handleSubmit}>
-            <div className="row">
-              <div className="col-lg-6">
+            <div class="row">
+              <div class="col-lg-6">
                 <input
-                  type="text"
+                  type="name"
                   id="name"
                   name="name"
-                  placeholder="Ether name"
+                  placeholder="Enter Name"
                 />
               </div>
-
-              <div className="col-lg-6">
+              <div class="col-lg-6">
                 <input
                   type="email"
                   id="email"
                   name="email"
-                  placeholder="Ether Email"
+                  placeholder="Enter Mail"
                 />
               </div>
-
-              <div className="col-lg-12">
+              <div class="col-lg-12">
                 <textarea
                   type="message"
                   id="message"
                   name="message"
-                  placeholder="Ether message"
+                  placeholder="Enter your message..."
                 ></textarea>
               </div>
-
-              <div className="ico-contact__btn text-center mt-10">
+              <div class="ico-contact__btn text-center mt-10">
                 <button
-                  className="thm-btn"
+                  class="thm-btn"
                   type="submit"
                   disabled={state.submitting}
                 >
@@ -59,14 +54,13 @@ const Contact = () => {
               </div>
             </div>
           </form>
-
-          <div className="ico-contact__shape-img">
-            <div className="shape shape--1">
+          <div class="ico-contact__shape-img">
+            <div class="shape shape--1">
               <div data-parallax='{"y" : -50}'>
                 <img src="assets/img/shape/c_shape1.png" alt="" />
               </div>
             </div>
-            <div className="shape shape--2">
+            <div class="shape shape--2">
               <div data-parallax='{"y" : 60}'>
                 <img src="assets/img/shape/c_shape2.png" alt="" />
               </div>
@@ -74,15 +68,14 @@ const Contact = () => {
           </div>
         </div>
       </div>
-
-      <div className="ico-contact__shape">
-        <div className="shape shape--1">
+      <div class="ico-contact__shape">
+        <div class="shape shape--1">
           <img src="assets/img/shape/f_shape1.png" alt="" />
         </div>
-        <div className="shape shape--2">
+        <div class="shape shape--2">
           <img src="assets/img/shape/f_shape2.png" alt="" />
         </div>
-        <div className="shape shape--3">
+        <div class="shape shape--3">
           <img src="assets/img/shape/f_shape3.png" alt="" />
         </div>
       </div>
@@ -90,4 +83,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default contact;

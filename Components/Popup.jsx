@@ -12,6 +12,7 @@ const Popup = ({
   setLoader,
 }) => {
   const [amount, setAmount] = useState();
+
   const [transferToken, setTransferToken] = useState();
 
   useEffect(() => {
@@ -24,25 +25,24 @@ const Popup = ({
   }, []);
 
   return (
-    <section className="new-margin ico-contact pos-rel">
-      <div className="container">
-        <div className="ico-contact__wrap">
-          <h2 className="title">
+    <section class="new-margin ico-contact pos-rel">
+      <div class="container">
+        <div class="ico-contact__wrap">
+          <h2 class="title ">
             Buy Token <strong onClick={() => setBuyModel(false)}>X</strong>
           </h2>
-
           <div>
-            <div className="row">
-              <div className="col-lg-6">
+            <div class="row">
+              <div class="col-lg-6">
                 <input
                   type="text"
-                  placeholder={`Token Balance: ${transferToken?.balance} ${transferToken?.symbol} `}
+                  placeholder={`Token Balance: ${transferToken?.balance} ${transferToken?.symbol}`}
                   onChange={(e) => setAmount(e.target.value)}
                 />
               </div>
-              <div className="col-lg-6">
+              <div class="col-lg-6">
                 <input
-                  type="text"
+                  type="email"
                   value={
                     amount
                       ? `${amount * detail?.tokenPrice} ${currency}`
@@ -51,52 +51,51 @@ const Popup = ({
                 />
               </div>
 
-              <div className="col-lg-12">
+              <div class="col-lg-12">
                 <textarea
                   disabled
                   name="message"
                   cols="30"
                   rows="10"
-                  placeholder={`Current Price: ${detail?.tokenBal}${
+                  placeholder={`Current Price: ${
+                    detail?.tokenPrice
+                  } ${currency}  Token Balance:  ${detail?.tokenBal}${
                     detail?.symbol
-                  } Token Address: ${detail?.tokenBal} ${shortenAddress(
+                  }   Token Address:  ${detail?.toeknBal} ${shortenAddress(
                     detail?.tokenAddr
                   )}`}
                 ></textarea>
               </div>
-
-              <div className="ico-contract__btn text-center mt-10">
-                <button onClick={() => BUY_TOKEN(amount)} className="thm-btn">
+              <div class="ico-contact__btn text-center mt-10">
+                <button onClick={() => BUY_TOKEN(amount)} class="thm-btn">
                   Buy Token
                 </button>
               </div>
             </div>
           </div>
-
-          <div className="ico-contact__shape-img">
-            <div className="shape shape--1">
-              <div className="">
+          <div class="ico-contact__shape-img">
+            <div class="shape shape--1">
+              <div data-parallax='{"y" : -50}'>
                 <img src="assets/img/shape/c_shape1.png" alt="" />
               </div>
             </div>
-            <div className="shape shape--2">
-              <div className="">
+            <div class="shape shape--2">
+              <div data-parallax='{"y" : 60}'>
                 <img src="assets/img/shape/c_shape2.png" alt="" />
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <div className="ico-contact__shape">
-        <div className="shape shape--1">
-          <img src="assets/img/shape/c_shape1.png" alt="" />
+      <div class="ico-contact__shape">
+        <div class="shape shape--1">
+          <img src="assets/img/shape/f_shape1.png" alt="" />
         </div>
-        <div className="shape shape--2">
-          <img src="assets/img/shape/c_shape2.png" alt="" />
+        <div class="shape shape--2">
+          <img src="assets/img/shape/f_shape2.png" alt="" />
         </div>
-        <div className="shape shape--3">
-          <img src="assets/img/shape/c_shape3.png" alt="" />
+        <div class="shape shape--3">
+          <img src="assets/img/shape/f_shape3.png" alt="" />
         </div>
       </div>
     </section>

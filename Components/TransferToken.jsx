@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
-
-const TransferToken = ({
-  setTransferModel,
+//
+const transferToken = ({
   TRANSFER_TOKEN,
+  setTransferModel,
   ERC20,
   setLoader,
 }) => {
@@ -13,6 +13,11 @@ const TransferToken = ({
   });
 
   const [tokenDetails, setTokenDetails] = useState();
+
+  const [zeroAdd, setZeroAdd] = useState(
+    "0x0000000000000000000000000000000000000000"
+  );
+
   const [transferToken, setTransferToken] = useState();
 
   useEffect(() => {
@@ -28,105 +33,89 @@ const TransferToken = ({
         }
         setLoader(false);
       };
+
       loadToken();
     }
   }, [transferToken]);
   return (
-    <section className="new-margin ico-contact pos-rel">
-      <div className="container">
-        <div className="ico-contact__wrap">
-          <h2 className="title">
+    <section class="new-margin ico-contact pos-rel">
+      <div class="container">
+        <div class="ico-contact__wrap">
+          <h2 class="title ">
             Transfer Token{" "}
             <strong onClick={() => setTransferModel(false)}>X</strong>
           </h2>
-
           <div>
-            <div className="row">
-              <div className="col-lg-12">
+            <div class="row">
+              <div class="col-lg-12">
                 {tokenDetails?.name ? (
                   <input
                     type="text"
-                    value={`Name ${tokenDetails?.name} Balance: ${tokenDetails?.balance} ${tokenDetails?.symbol}`}
+                    value={`Name: ${tokenDetails?.name} Balance: ${tokenDetails?.balance} ${tokenDetails?.symbol}`}
                   />
                 ) : (
                   <input
                     type="text"
-                    placeholder="_tokenAddress"
+                    placeholder={"_tokenAddress"}
                     onChange={(e) => (
-                      setToken({
-                        ...token,
-                        _tokenAddress: e.target.value,
-                      }),
+                      setToken({ ...token, _tokenAddress: e.target.value }),
                       setTransferToken(e.target.value)
                     )}
                   />
                 )}
               </div>
-
-              <div className="col-lg-12">
+              <div class="col-lg-12">
                 <input
                   type="text"
                   placeholder="_sendTo"
                   onChange={(e) =>
-                    setToken({
-                      ...token,
-                      _sendTo: e.target.value,
-                    })
+                    setToken({ ...token, _sendTo: e.target.value })
                   }
                 />
               </div>
-              <div className="col-lg-12">
+              <div class="col-lg-12">
                 <input
                   type="text"
                   placeholder="_amount"
                   onChange={(e) =>
-                    setToken({
-                      ...token,
-                      _amount: e.target.value,
-                    })
+                    setToken({ ...token, _amount: e.target.value })
                   }
                 />
               </div>
-
-              <div className="ico-contract__btn text-center mt-10">
-                <button
-                  onClick={() => TRANSFER_TOKEN(token)}
-                  className="thm-btn"
-                >
+              <div class="ico-contact__btn text-center mt-10">
+                <button onClick={() => TRANSFER_TOKEN(token)} class="thm-btn">
                   Transfer Token
                 </button>
               </div>
             </div>
           </div>
-
-          <div className="ico-contact__shape-img">
-            <div className="shape shape--1">
-              <div className="">
+          <div class="ico-contact__shape-img">
+            <div class="shape shape--1">
+              <div data-parallax='{"y" : -50}'>
                 <img src="assets/img/shape/c_shape1.png" alt="" />
               </div>
             </div>
-            <div className="shape shape--2">
-              <div className="">
+            <div class="shape shape--2">
+              <div data-parallax='{"y" : 60}'>
                 <img src="assets/img/shape/c_shape2.png" alt="" />
               </div>
             </div>
           </div>
         </div>
       </div>
-
-      <div className="ico-contact__shape">
-        <div className="shape shape--1">
-          <img src="assets/img/shape/c_shape1.png" alt="" />
+      <div class="ico-contact__shape">
+        <div class="shape shape--1">
+          <img src="assets/img/shape/f_shape1.png" alt="" />
         </div>
-        <div className="shape shape--2">
-          <img src="assets/img/shape/c_shape2.png" alt="" />
+        <div class="shape shape--2">
+          <img src="assets/img/shape/f_shape2.png" alt="" />
         </div>
-        <div className="shape shape--3">
-          <img src="assets/img/shape/c_shape3.png" alt="" />
+        <div class="shape shape--3">
+          <img src="assets/img/shape/f_shape3.png" alt="" />
         </div>
       </div>
     </section>
   );
 };
 
-export default TransferToken;
+export default transferToken;
